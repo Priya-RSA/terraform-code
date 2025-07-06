@@ -19,12 +19,12 @@ provider "aws" {
   region  = "eu-west-1"
 }
 
-# define a variable
+# Variable declaration 
 variable "vpc_cidr" {
   default = "10.1.0.0/16"
 }
 
-# create a aws resource
+# create a aws resource and reference the vpc_cidr variable
 resource "aws_vpc" "main" {
   cidr_block       = var.vpc_cidr
   instance_tenancy = "default"
